@@ -12,6 +12,10 @@ public class Sub extends Super{
 	   this.sub=sub;
    }
    
+   public void method2() {
+	   System.out.println("Inside method2");
+   }
+   
    @Override
    public void show() {
 	   super.show(); //to call overridden method  of super class

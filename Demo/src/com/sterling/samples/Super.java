@@ -11,6 +11,9 @@ public class Super {
     	this.parent=parent;
     }
     
+    public void method1() {
+    	System.out.println("Method 1 inside");
+    }
     public void show() {
     	System.out.println("Parent data is "+parent);
     }
