@@ -18,5 +18,11 @@ public class MainActivity {
     	Process.doActivity(()->{
     		System.out.println("Key Acitivity performing..lambda way");
     	});
+    	
+    	Process.doActivity(Activities::playing);//method reference operator
+    	Process.doActivity(Activities::eating);
+    	Process.doActivity(Activities::singing);
+    	
+    	
 	}
 }
