@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class FuelProcessor {
     public static void main(String n[]) {
     	System.out.println("Which one you want to fill fuel c for car, v for van, b for bus,"
-    			+ " m for machine, p for power Generator");
+    			+ " m for machine, p for power Generator can for container");
     	
     	Scanner sc=new Scanner(System.in);
     	
@@ -33,6 +33,17 @@ public class FuelProcessor {
     	case "p":
     		   f=new PowerGenerator();
     		   break;
+    		   
+    	case "can":
+    		   f=new Fuel() {
+
+				@Override
+				public void fillFuel() {
+					// TODO Auto-generated method stub
+					System.out.println("fill fuel for Container/Can");
+				}
+    			   
+    		   };
     		   
     	}
     	
