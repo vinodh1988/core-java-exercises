@@ -1,7 +1,11 @@
 package com.sterling.interfaces;
 
-public class Van implements Fuel {
-	  public void vanMethod() {
+public class Van extends Vehicle implements Fuel {
+	
+	  Van(){
+		  super("van");
+	  }
+	  public void method() {
 	    	System.out.println("Van's own method");
 	    }
 

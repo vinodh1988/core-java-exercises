@@ -12,16 +12,20 @@ public class FuelProcessor {
     	String choice=sc.next();
     	
     	Fuel f=null;
+    	Vehicle v=null;
     	
     	switch(choice) {
     	case "c":
-    		   f=new Car();
+    		   v=new Car();
+    		   f=v;
     		   break;
     	case "v":
-    		   f=new Van();
+    		   v=new Van();
+    		   f=v;
                break;
     	case "b":
-    		   f=new Bus();
+    		   v=new Bus();
+    		   f=v;
     		   break;
     	case "m":
     		   f=new Machinery();
@@ -32,6 +36,14 @@ public class FuelProcessor {
     		   
     	}
     	
-    	f.fillFuel();
+    	
+    	if(v!=null)
+    	{
+    		v.fillFuel();
+    		v.method();
+    		v.show();
+    	}
+    	else
+    		f.fillFuel();
     }
 }

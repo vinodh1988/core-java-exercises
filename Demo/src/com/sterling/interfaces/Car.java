@@ -1,7 +1,10 @@
 package com.sterling.interfaces;
 
-public class Car implements Fuel {
-    public void carMethod() {
+public class Car extends Vehicle {
+	Car(){
+		super("Car");
+	}
+    public void method() {
     	System.out.println("Car's own method");
     }
 

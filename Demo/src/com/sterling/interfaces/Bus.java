@@ -1,7 +1,10 @@
 package com.sterling.interfaces;
 
-public class Bus implements Fuel {
-     public void busMethod() {
+public class Bus extends Vehicle implements Fuel {
+	Bus(){
+		super("Bus");
+	}
+     public void method() {
     	 System.out.println("Bus own method");
      }
 
