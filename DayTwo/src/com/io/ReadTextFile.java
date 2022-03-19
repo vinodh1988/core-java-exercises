@@ -14,6 +14,7 @@ public class ReadTextFile {
 		System.out.println("Enter the name of the file");
 		String name=sc.next();
 		
+		
 		File f=new File(path+name);
 		try(FileReader fr=new FileReader(f);
 			BufferedReader br=new BufferedReader(fr)){
@@ -24,5 +25,7 @@ public class ReadTextFile {
 		catch(IOException e) {
 			e.printStackTrace();
 		}
+		
+		sc.close();
 	}
 }
