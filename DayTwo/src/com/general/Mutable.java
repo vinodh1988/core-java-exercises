@@ -12,4 +12,8 @@ public class Mutable {
     public void show() {
     	System.out.println(a+" is the value");
     }
+    
+    public String toString() {
+    	return "Hello!! Hi";
+    }
 }
