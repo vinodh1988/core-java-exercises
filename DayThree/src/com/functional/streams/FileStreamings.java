@@ -10,6 +10,8 @@ public class FileStreamings {
 		Files.lines(Paths.get("D:\\mypro.json")).forEach(x->{
 			   System.out.println(x);
 		   });
+		
+		
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
