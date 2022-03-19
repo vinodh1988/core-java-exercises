@@ -13,6 +13,7 @@ public class Emp implements Serializable{
 	private int eno;
      private String name;
      private String city;
+     //private transient String today;
 	public Emp() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -22,6 +23,7 @@ public class Emp implements Serializable{
 		this.eno = eno;
 		this.name = name;
 		this.city = city;
+		//this.today = "Saturday";
 	}
 	public int getEno() {
 		return eno;
@@ -43,7 +45,7 @@ public class Emp implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Emp [eno=" + eno + ", name=" + name + ", city=" + city + "]";
+		return "Emp [eno=" + eno + ", name=" + name + ", city=" + city +/*"Today "+today+*/ "]";
 	}
      
      
