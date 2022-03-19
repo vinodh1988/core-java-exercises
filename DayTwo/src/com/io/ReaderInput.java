@@ -17,5 +17,13 @@ public class ReaderInput {
   			// TODO Auto-generated catch block
   			e.printStackTrace();
   		}
+    	 finally {
+    		 try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	 }
      }
 }
