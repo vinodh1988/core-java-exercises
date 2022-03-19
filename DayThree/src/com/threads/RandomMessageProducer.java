@@ -11,15 +11,18 @@ public class RandomMessageProducer extends Thread {
     		"Java does not support operator overloading"
     };
     private int sleeptime;
+    public int rounds;
     
-    RandomMessageProducer(String name,int sleeptime){
+    RandomMessageProducer(String name,int sleeptime,int rounds){
     	super(name);
     	this.sleeptime = sleeptime;
+    	this.rounds=rounds;
     }
     
     @Override
     public void run() {
-    	  while(true) {
+    	int x=1;
+    	  while(x<rounds) {
     		  String temp=messages[(int)Math.round(Math.random()*6)];
     		  System.out.println(getName()+" Thread generated \" "+temp+" \"  message");
     		  try {
@@ -28,6 +31,7 @@ public class RandomMessageProducer extends Thread {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+    		  x++;
     	  }
     }
 }
