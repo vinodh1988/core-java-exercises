@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sterling.apps.model.Person;
 import com.sterling.apps.services.DataService;
 
 @RestController
@@ -21,4 +22,10 @@ public class FirstAPI {
   public String[] people() {
 	  return data.names();
   }
+  
+  @RequestMapping("/peopleobjects")
+  public Person[] peopleob() {
+	  return data.getPeople();
+  }
+  
 }
