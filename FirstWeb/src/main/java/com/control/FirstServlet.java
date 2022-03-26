@@ -48,7 +48,13 @@ public class FirstServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("SERVICE IS SERVED");
 		PrintWriter out = response.getWriter();
+		/*out.println("<html>");
+		out.println("<head><title> Servlet app</title></head>");
+		out.println("<body bgcolor='yellow'>");
 		out.println("Servlet is working");
+		out.println("</body>");
+		out.println("</html>");*/
+		response.sendRedirect("home.jsp");
 	}
 
 	/**
