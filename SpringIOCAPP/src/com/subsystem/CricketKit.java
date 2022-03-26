@@ -4,6 +4,9 @@ import org.springframework.stereotype.Component;
 
 @Component("kit")
 public class CricketKit implements Purchase{
+	{
+		System.out.println("Cricket Kit ...purchase...");
+	}
 
 	@Override
 	public void buy() {

@@ -11,14 +11,14 @@ import com.system.Task;
 public class MainApp {
    public static void main(String[] args) {
 	  ApplicationContext ac=new AnnotationConfigApplicationContext(JavaConfig.class);
-	  System.out.println("enter play for gaming, cook for Cooking, study for studying ");
+	/*  System.out.println("enter play for gaming, cook for Cooking, study for studying ");
 	  Scanner sc=new Scanner(System.in);
 	  String option = sc.next();
 	  Task t=(Task)ac.getBean(option);
 	  t.perform();
 	  System.out.printf("\n HashCode: %x", t.hashCode());
 	  t=(Task)ac.getBean(option);
-	  System.out.printf("\n HashCode: %x", t.hashCode());
+	  System.out.printf("\n HashCode: %x", t.hashCode());*/
 	 
    }
 }

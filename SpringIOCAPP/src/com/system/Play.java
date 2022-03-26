@@ -10,6 +10,10 @@ public class Play implements Task{
 private Purchase kit; //autowiring by type - if only one implementaion for interface
                       //autowiring by name - if multiple implementations for interface
 
+{
+	System.out.println("Play is about to be instantiated completly");
+}
+
 	@Override
 	public void perform() {
 		// TODO Auto-generated method stub

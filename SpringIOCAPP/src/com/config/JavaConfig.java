@@ -21,6 +21,7 @@ public class JavaConfig {
 	 }
 	 
 	 @Bean("cook")
+
 	 public Task getCook() {
 		 return new Cook();
 	 }
