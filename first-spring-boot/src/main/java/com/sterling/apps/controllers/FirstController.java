@@ -13,5 +13,9 @@ public class FirstController {
 	public String doIt() {
 		return "home";
 	}
+	@RequestMapping("/greet.do")
+	public String dothis() {
+		return "sample";
+	}
 
 }
