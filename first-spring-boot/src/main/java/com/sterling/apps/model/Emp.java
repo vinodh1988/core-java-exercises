@@ -19,8 +19,9 @@ public class Emp {
     private String name;
   @Column	 
     private String city;
+
   @ManyToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name="deptno")
+  @JoinColumn(name="deptno",nullable = false)
   @JsonIgnore
    Dept dept;
 public Emp() {} 
@@ -49,6 +50,16 @@ public String getCity() {
 public void setCity(String city) {
 	this.city = city;
 }
+
+
+public Dept getDept() {
+	return dept;
+}
+
+public void setDept(Dept dept) {
+	this.dept = dept;
+}
+
   
   
 }

@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.sterling.apps.model.Dept;
 
 public interface DeptRepository extends JpaRepository<Dept,Long> {
-
+      public Dept findByDeptno(int deptno);
 }
