@@ -20,6 +20,11 @@ public class PeopleService implements InitializingBean {
   public List<Person> getPeople(){
 	  return people.findAll();
   }
+  
+  
+  public void addPeople(Person person) {
+	  people.save(person);
+  }
 
 @Override
 public void afterPropertiesSet() throws Exception {
