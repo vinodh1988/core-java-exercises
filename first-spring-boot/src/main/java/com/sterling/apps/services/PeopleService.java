@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.sterling.apps.model.Person;
 import com.sterling.apps.repository.PeopleRepository;
 import com.sterling.utilities.RecordAlreadyExistsException;
+import com.sterling.utilities.RecordNotExistsException;
 
 @Service
 public class PeopleService implements InitializingBean {
@@ -30,6 +31,15 @@ public class PeopleService implements InitializingBean {
 	 else
 		throw new RecordAlreadyExistsException();
   }
+  
+  public void  updatePeople(Person person)  throws RecordNotExistsException{
+	 Person p= people.findBySno(person.getSno());
+	 if(p!=null)
+	  people.save(person);
+	 else
+		throw new RecordNotExistsException();
+  }
+
 
 @Override
 public void afterPropertiesSet() throws Exception {

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import com.sterling.apps.model.Person;
 import com.sterling.apps.services.DataService;
 import com.sterling.apps.services.PeopleService;
 import com.sterling.utilities.RecordAlreadyExistsException;
+import com.sterling.utilities.RecordNotExistsException;
 
 @RestController
 @RequestMapping("/api")
@@ -59,5 +61,21 @@ public class FirstAPI {
 	  }
 	return new ResponseEntity<String>("Successfully inserted",HttpStatus.CREATED);
   }
+  
+  @PutMapping("/peopleservice")
+  public ResponseEntity<String> updatePerson(@RequestBody Person person) {
+	  try {
+	   people.updatePeople(person);
+	  }
+	  catch(RecordNotExistsException e) {
+		  return new ResponseEntity<String>("Record not exists exception",HttpStatus.INTERNAL_SERVER_ERROR);
+	  }
+	  catch(Exception e) {
+		  e.printStackTrace();
+		  return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+	  }
+	return new ResponseEntity<String>("Successfully update",HttpStatus.OK);
+  }
+
   
 }
