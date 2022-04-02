@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table
 public class Emp {
@@ -19,6 +21,7 @@ public class Emp {
     private String city;
   @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name="deptno")
+  @JsonIgnore
    Dept dept;
 public Emp() {} 
   
