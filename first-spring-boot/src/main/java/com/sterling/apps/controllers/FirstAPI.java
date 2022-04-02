@@ -21,7 +21,7 @@ import com.sterling.utilities.RecordNotExistsException;
 
 @RestController
 @RequestMapping("/api")
-public class FirstAPI {
+public class FirstAPI implements PeopleAPISpecification {
 	
 	@Autowired
 	private DataService data;
@@ -80,7 +80,7 @@ public class FirstAPI {
   }
 
   @DeleteMapping("/peopleservice/{sno}")
-  public ResponseEntity<String> deletePerson(@PathVariable int sno)
+  public ResponseEntity<String> deletePerson(@PathVariable Integer sno)
   {
 	  try {
 		    people.deletePeople(sno);
@@ -97,6 +97,8 @@ public class FirstAPI {
 	  }
 	  return new ResponseEntity<String>("Successfully Deleted",HttpStatus.OK);
   }
+
+
   
   
 }
