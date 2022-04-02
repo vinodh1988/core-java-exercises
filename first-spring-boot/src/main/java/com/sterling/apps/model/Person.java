@@ -1,8 +1,18 @@
 package com.sterling.apps.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Person {
+@Id
    private int sno;
+@Column
    private String name;
+@Column
    private String city;
    
    
