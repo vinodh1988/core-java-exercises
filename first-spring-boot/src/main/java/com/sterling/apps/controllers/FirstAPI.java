@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sterling.apps.model.Person;
 import com.sterling.apps.services.DataService;
 import com.sterling.apps.services.PeopleService;
+import com.sterling.utilities.RecordAlreadyExistsException;
 
 @RestController
 @RequestMapping("/api")
@@ -45,15 +46,18 @@ public class FirstAPI {
   }
   
   @PostMapping("/peopleservice")
-  public ResponseEntity<Person> addPerson(@RequestBody Person person) {
+  public ResponseEntity<String> addPerson(@RequestBody Person person) {
 	  try {
 	   people.addPeople(person);
 	  }
+	  catch(RecordAlreadyExistsException e) {
+		  return new ResponseEntity<String>("Record already exists exception",HttpStatus.INTERNAL_SERVER_ERROR);
+	  }
 	  catch(Exception e) {
 		  e.printStackTrace();
-		  return new ResponseEntity<Person>(HttpStatus.INTERNAL_SERVER_ERROR);
+		  return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 	  }
-	return new ResponseEntity<Person>(person,HttpStatus.CREATED);
+	return new ResponseEntity<String>("Successfully inserted",HttpStatus.CREATED);
   }
   
 }

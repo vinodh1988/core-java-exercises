@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.sterling.apps.model.Person;
 import com.sterling.apps.repository.PeopleRepository;
+import com.sterling.utilities.RecordAlreadyExistsException;
 
 @Service
 public class PeopleService implements InitializingBean {
@@ -22,8 +23,12 @@ public class PeopleService implements InitializingBean {
   }
   
   
-  public void addPeople(Person person) {
+  public void addPeople(Person person)  throws RecordAlreadyExistsException{
+	 Person p= people.findBySno(person.getSno());
+	 if(p==null)
 	  people.save(person);
+	 else
+		throw new RecordAlreadyExistsException();
   }
 
 @Override
