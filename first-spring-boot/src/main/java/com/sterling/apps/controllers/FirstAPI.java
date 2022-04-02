@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -77,5 +79,24 @@ public class FirstAPI {
 	return new ResponseEntity<String>("Successfully update",HttpStatus.OK);
   }
 
+  @DeleteMapping("/peopleservice/{sno}")
+  public ResponseEntity<String> deletePerson(@PathVariable int sno)
+  {
+	  try {
+		    people.deletePeople(sno);
+		    
+	  }
+	  catch(RecordNotExistsException e) {
+		  e.printStackTrace();
+		  return new ResponseEntity<String>("Record not exists exception",HttpStatus.INTERNAL_SERVER_ERROR);
+			 
+	  }
+	  catch(Exception e) {
+		  e.printStackTrace();
+		  return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+	  }
+	  return new ResponseEntity<String>("Successfully Deleted",HttpStatus.OK);
+  }
+  
   
 }
