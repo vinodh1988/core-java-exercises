@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: FirstAPI
+        uri: http://localhost:9999/
+        predicates:
+        - Path=/api/**
+      - id: DockerAPI
+        uri: http://localhost:5000/
+        predicates:
+        - Path=/docker-api/**
+      - id: EurekeServer
+        uri: http://localhost:8761/
+        predicates:
+        - Path=/**
+      - id: Self
+        uri: http://localhost:6060/
+        predicates:
+        - Path=/gateway-api/**
