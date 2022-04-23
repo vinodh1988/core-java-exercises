@@ -21,7 +21,7 @@ public class ActivemqSpringSenderApplication {
 			}
 			if(id==9495)
 				break;
-			jms.convertAndSend("FirstQueue","Message "+id);
+			jms.convertAndSend("FirstQueue","Message Pattern is changed,.... "+id);
 		}
 		
 	}
